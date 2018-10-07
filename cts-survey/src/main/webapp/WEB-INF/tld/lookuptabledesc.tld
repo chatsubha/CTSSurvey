@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+	version="2.0">
+	<description>Lookup Table Description Custom Tag</description>
+	<tlib-version>2.1</tlib-version>
+	<short-name>lookupDesc</short-name>
+	<tag>
+		<name>lookupDesc</name>
+		<tag-class>com.portal.util.LookupTableDescTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>tableName</name>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<name>columnName</name>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<name>whereCondition</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+</taglib>

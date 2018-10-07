@@ -1,0 +1,101 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <script src="/js/jquery.js"></script>
+    <title>Survey App</title>
+    <!-- <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/">-->
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/narrow.css" rel="stylesheet">
+  </head>
+
+  <body>
+    
+    <div class="container">
+      <div class="header clearfix" style="width:100%">
+        <nav>
+          <ul class="nav nav-pills float-right">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Cognizant Survey App - Demo V0.1</h3>
+      </div>
+<br/><br/><br/><br/><br/>
+      <div class="jumbotron">
+	  <div class="header clearfix" style="width:100%;line-height:2%;">
+	  <h4 class="text-muted" style="float:left">Cognizant Survey <h4>
+	  </div>
+	    <div id="welcomeDiv">
+        <h1 class="display-3">Welcome</h1>
+        <p class="lead">Take me to survey App</p>
+        <p><a class="btn btn-lg btn-success"  onclick="showContactForm()" role="button">Proceed</a></p>
+		</div>
+		<div id="contact-form" class="contact-form">
+		<form action="startSurvey" method="post">
+		<div class="row">
+		<div class="col-md-12">
+		<div class="form-group">
+		<input type="text" name="empId" placeholder="Employee id *" class="form-control"/>
+		</div>
+		<div class="form-group">
+		<input type="text" name="name" placeholder="Name *" class="form-control"/>
+		</div>
+		<div class="form-group">
+		<select name="role" placeholder="Role *" class="form-control">
+		<option value="" > Role * </option>
+		<option value="TL" > Team Lead </option>
+		<option value="TM"> Team Member</option>
+		</select>
+		</div>
+		<div class="form-group">
+		<input type="text" name="email" placeholder="Email-id *" class="form-control"/>
+		</div>
+		<div class="form-group">
+		<input type="submit" name="btnSubmit" class="btnSubmit" value="Submit"/><input type="submit" name="btnSubmit" class="btnCancel" value="Cancel"/>
+		</div>
+		</div>
+		</div>
+		</form>
+		</div>
+      </div>
+
+     
+
+      <footer class="footer">
+        <p>&copy; Cognizant 2018</p>
+      </footer>
+
+    </div> <!-- /container -->
+         <script>
+		      $(document).ready(function(){
+			    $("#contact-form").hide();
+			  });
+			  function showContactForm() {
+			  $("#welcomeDiv").hide(1000);
+			  $("#contact-form").slideDown(2000);
+			  }
+			  
+		 </script>
+    
+  </body>
+</html>
