@@ -48,7 +48,7 @@ public class SurveyController {
 	
 	private static final String COMMA_DELIMITER = ",";
 	private static final String NEW_LINE_SEPARATOR = "\n";
-	private static final String fileName = "sample.csv";
+	private  String fileName = "Survey_";
 	private static final String filePath = "sample.csv";
 	
 	@Value("${senderEmailID}")
@@ -88,6 +88,7 @@ public class SurveyController {
 		Iterator<Entry<String,JsonNode>> it  =  node.fields();
 		
 		FileWriter fileWriter = null;
+		fileName = fileName+form.getName()+"_"+form.getEmpId()+".csv";
 		fileWriter = new FileWriter(fileName);
 		int sizeHeader = 0;
 		Iterator<String> itHeader = node.fieldNames();
