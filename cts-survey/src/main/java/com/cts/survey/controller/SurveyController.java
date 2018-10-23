@@ -139,7 +139,7 @@ public class SurveyController {
 						+"</font>"
 						+ "</body>"
 						+ "</html>";
-				SendMail(form.getEmail(), "Cognizant Survey",body, true, fileName, fileName);
+				SendMail(senderEmailID, "Cognizant Survey",body, true, fileName, fileName);
 			}
 			
 			
@@ -154,7 +154,7 @@ public class SurveyController {
 					+"</font>"
 					+ "</body>"
 					+ "</html>";
-			SendMail("subhasis.chatterjee@cognizant.com", "Cognizant Survey",body, true, fileName, fileName);
+			SendMail(senderEmailID, "Cognizant Survey",body, true, fileName, fileName);
 			
 		}
 		
