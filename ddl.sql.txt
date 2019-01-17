@@ -1,0 +1,27 @@
+--DDL
+CREATE TABLE ctssurvey.SURVEY_QUESTION(QUESTION_ID bigint PRIMARY KEY auto_increment ,QUESTION VARCHAR(1000),ROLE VARCHAR(3));
+
+CREATE TABLE ctssurvey.PROJECT_LEAD_TABLE_INFO(PL_UNIQUE_ID  bigint PRIMARY KEY auto_increment ,QUESTION_ID VARCHAR(500),EMAIL_ID VARCHAR(100),VALUE VARCHAR(500));
+
+CREATE TABLE ctssurvey.PARTICIPANTS_INFO(EMAIL_ID VARCHAR(100) PRIMARY KEY ,ROLE VARCHAR(3),PL_UNIQUE_ID VARCHAR(10) references PROJECT_LEAD_TABLE_INFO.PL_UNIQUE_ID,TM_UNIQUE_ID VARCHAR(10) references TM_MEMBER_TABLE_INFO.TM_UNIQUE_ID );
+
+CREATE TABLE ctssurvey.TM_MEMBER_TABLE_INFO(TM_UNIQUE_ID  bigint PRIMARY KEY auto_increment ,QUESTION_ID VARCHAR(500) ,EMAIL_ID VARCHAR(100),VALUE VARCHAR(500),PL_UNIQUE_ID VARCHAR(10) references PROJECT_LEAD_TABLE_INFO.PL_UNIQUE_ID);
+
+
+ALTER TABLE ctssurvey.PROJECT_LEAD_TABLE_INFO
+ADD constraint foreign key FK_EMAIL_ID(EMAIL_ID) references ctssurvey.PARTICIPANTS_INFO(EMAIL_ID);
+
+
+
+insert into ctssurvey.SURVEY_QUESTION(QUESTION,ROLE) values('Our organization uses patents and licenses as a way to store knowledge.','B')
+insert into ctssurvey.SURVEY_QUESTION(QUESTION,ROLE) values('Much of our organization’s knowledge is contained in manuals, databases, etc.','B');
+insert into ctssurvey.SURVEY_QUESTION(QUESTION,ROLE) values('Our organization’s culture (stories, rituals) contains valuable ideas, ways of doing business, etc.','B');
+insert into ctssurvey.SURVEY_QUESTION(QUESTION,ROLE) values('Our organization embeds much of its knowledge and information in structures, systems, and processes.','B');
+insert into ctssurvey.SURVEY_QUESTION(QUESTION,ROLE) values('Our firm places a very strong emphasis on R&D, technological leadership, and innovations, instead of trusting only in tried-and-tested products and services','B');
+insert into ctssurvey.SURVEY_QUESTION(QUESTION,ROLE) values('In the past 5 years, we have marketed a number of new lines of products or services','B');
+insert into ctssurvey.SURVEY_QUESTION(QUESTION,ROLE) values('In the past 5 years, changes to our product or service lines have usually been quite dramatic','B');
+insert into ctssurvey.SURVEY_QUESTION(QUESTION,ROLE) values('In dealing with competitors, my firm typically initiates actions which competitors then respond to','B');
+insert into ctssurvey.SURVEY_QUESTION(QUESTION,ROLE) values('In dealing with competitors, my firm is very often the first business to introduce new products/services, administrative techniques, operating technologies, etc.','B');
+insert into ctssurvey.SURVEY_QUESTION(QUESTION,ROLE) values('In dealing with competitors, my firm typically adopts a very competitive ‘undo-the-competitors’ posture','B');
+insert into ctssurvey.SURVEY_QUESTION(QUESTION,ROLE) values('In general, the top managers of my firm have a strong proclivity for high-risk projects (with chances of very high returns)','B');
+insert into ctssurvey.SURVEY_QUESTION(QUESTION,ROLE) values('In general, the top managers of my firm believe that owing to the nature of the environment, bold, wide-ranging acts are necessary to achieve the firm’s objectives','B');
